@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Eref update design",
+    "version": "1.2.0",
+    "description": "Change UI Interface eref.vts.su.ac.rs",
+    "icons": {
+        "128": "images/128.png"
+    },
+    "content_scripts": [
+        
+        {
+            "matches": [ "https://eref.vts.su.ac.rs/*" ],
+            "css" : ["reset.css", "eref-redesign.css"],
+            "run_at":"document_start"
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["images/*"],
+            "matches": ["<all_urls>"]
+        }
+    ]
+}
