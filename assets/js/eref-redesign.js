@@ -1,7 +1,15 @@
-var meta = document.createElement('meta');
+// Meta for adaptive viewport
+let meta = document.createElement('meta');
 meta.name = "viewport";
 meta.content = "width=device-width, initial-scale=1.0";
 document.getElementsByTagName('head')[0].appendChild(meta);
+
+// Link for favicon
+let faviconLink = document.createElement("link");
+faviconLink.rel = "icon";
+faviconLink.type = "image/png";
+faviconLink.href = chrome.runtime.getURL("assets/images/favicon.png");
+document.getElementsByTagName('head')[0].appendChild(faviconLink);
 
 // Mobile menu header
 let mobileMenu = document.createElement("div");
