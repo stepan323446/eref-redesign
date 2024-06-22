@@ -12,6 +12,11 @@
             "matches": [ "https://eref.vts.su.ac.rs/*" ],
             "css" : ["reset.css", "eref-redesign.css"],
             "run_at":"document_start"
+        },
+        {
+            "matches": [ "https://eref.vts.su.ac.rs/*" ],
+            "js" : ["eref-redesign.js"],
+            "run_at":"document_end"
         }
     ],
     "web_accessible_resources": [

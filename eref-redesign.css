@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box !important;
+    margin: 0 !important;
 }
 :root {
     --background-primary: #232323;
@@ -10,6 +11,9 @@
     --btn-primary-background-hover: #fff021;
     --btn-primary-color: #fff;
     --btn-primary-color-hover: #1b1b1b;
+}
+html.lock {
+    overflow: hidden !important;
 }
 /* Header menu */
 #header-top {
@@ -105,6 +109,8 @@
 
 /* Main content */
 #main {
+    padding: 10px !important;
+    padding-left: 15px !important;
     float: none !important;
     width: 100% !important;
 }
@@ -296,4 +302,112 @@ input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hove
     height: auto !important;
     background: #b8b8b8 !important;
     padding: 30px 10px 10px 10px;
+}
+
+.mobile-menu {
+    display: none;
+}
+@media only screen and (max-width: 700px) {
+    #sidebar {
+        display: none !important;
+    }
+    #content {
+        display: block;
+    }
+    #pointsMessage {
+        position: relative !important;
+        width: 100% !important;
+        top: 0 !important;
+        left: 0 !important;
+    }
+    #header-menu {
+        display: none;
+    }
+    #header-top {
+        display: none !important;
+    }
+    #header-img-back {
+        margin-top: 30px !important;
+        height: auto !important;
+    }
+    .mobile-menu {
+        position: fixed;
+        display: flex;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 0 5px;
+        background: var(--background-primary);
+        z-index: 999;
+    }
+    /* Burger menu */
+    .mobile-menu > button {
+        position: relative;
+        display: block;
+        width: 30px;
+        height: 30px;
+        background: none !important;
+        border: 1px solid #fff;
+    }
+    .mobile-menu > button::before,
+    .mobile-menu > button::after {
+        content: '';
+        position: absolute;
+        left: 0;
+
+        width: 100%;
+        height: 3px;
+        border-radius: 5px;
+        background: #fff;
+    }
+    .mobile-menu > button::before {
+        top: 7px;
+    }
+    .mobile-menu > button::after {
+        bottom: 7px;
+    }
+    .mobile-menu-content {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #2a2a2a;
+        padding: 40px 20px 20px 20px;
+        overflow-y: auto;
+    }
+    .mobile-menu-content.active {
+        display: block;
+    }
+    .mobile-menu-nav {
+        list-style: none;
+    }
+    .mobile-menu-nav li {
+        text-align: left;
+    }
+    .mobile-menu-nav li a {
+        display: block;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .mobile-menu-nav li.active a {
+        background: #101010;
+    }
+    .mobile-menu-nav li a {
+        color: #cacaca;
+    }
+    .mobile-menu-nav li.active a {
+        color: #fff;
+    }
+    .mobile-menu-li-children {
+        display: none;
+        list-style: none;
+        background: #454545;
+        border-radius: 10px;
+        padding-left: 15px;    
+    }
+    .mobile-menu-li-children.active {
+        display: block;
+    }
 }
