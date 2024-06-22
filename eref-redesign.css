@@ -401,13 +401,13 @@ input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hove
         color: #fff;
     }
     .mobile-menu-li-children {
-        display: none;
+        display: none !important;
         list-style: none;
         background: #454545;
         border-radius: 10px;
         padding-left: 15px;    
     }
     .mobile-menu-li-children.active {
-        display: block;
+        display: block !important;
     }
 }
