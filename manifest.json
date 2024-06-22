@@ -20,7 +20,7 @@
         },
         {
             "matches": [ "https://eref.vts.su.ac.rs/*" ],
-            "js" : ["eref-redesign.js"],
+            "js" : ["assets/eref-redesign.js"],
             "run_at":"document_end"
         }
     ],
