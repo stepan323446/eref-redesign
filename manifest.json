@@ -4,19 +4,28 @@
     "version": "1.2.0",
     "description": "Change UI Interface eref.vts.su.ac.rs",
     "icons": {
-        "128": "images/128.png"
+        "128": "icon.png"
     },
     "content_scripts": [
         
         {
             "matches": [ "https://eref.vts.su.ac.rs/*" ],
-            "css" : ["reset.css", "eref-redesign.css"],
+            "css" : [
+                "assets/css/reset.css",
+                "assets/css/fontawesome/css/fontawesome.min.css", 
+                "assets/css/fontawesome/css/solid.css", 
+                "assets/css/eref-redesign.css"
+            ],
             "run_at":"document_start"
         }
     ],
     "web_accessible_resources": [
         {
-            "resources": ["images/*"],
+            "resources": ["assets/images/*"],
+            "matches": ["<all_urls>"]
+        },
+        {
+            "resources": ["assets/webfonts/*"],
             "matches": ["<all_urls>"]
         }
     ]

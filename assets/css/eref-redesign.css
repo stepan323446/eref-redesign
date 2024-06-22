@@ -10,6 +10,8 @@
     --btn-primary-background-hover: #fff021;
     --btn-primary-color: #fff;
     --btn-primary-color-hover: #1b1b1b;
+
+    --font-awesome: "Font Awesome 6 Free";
 }
 /* Header menu */
 #header-top {
@@ -286,10 +288,49 @@ input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hove
     margin-bottom: 5px !important;
 }
 
+/* Notice */
+ul.error, ul.errors, ul.warning, ul.success, ul.notice {
+    padding-top: 0 !important;
+}
+.errorDiv, .warningDiv, .successDiv, .noticeDiv {
+    position: relative;
+    padding: 10px 10px 10px 60px !important;
+    min-height: auto !important;
+}
+.noticeDiv, .errorDiv, .warningDiv, .successDiv {
+    font-size: 14px;
+    line-height: 18px;
+    background-image: none !important;
+}
+
 #loginform {
     background: #939393;
     width: auto !important;
 }
+.noticeDiv::before,
+.errorDiv::before,
+.warningDiv::before,
+.successDiv::before {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-awesome);
+    font-weight: 900;
+}
+.noticeDiv::before {
+    content: "\f06a";
+}
+.errorDiv::before {
+    content: "\f057";
+}
+.warningDiv::before {
+    content: "\f071";
+}
+.successDiv::before {
+    content: "\f058";
+}
+
 
 /* Footer */
 #footer {
