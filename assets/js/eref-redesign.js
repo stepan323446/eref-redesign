@@ -15,14 +15,86 @@ document.getElementsByTagName('head')[0].appendChild(faviconLink);
 let mobileMenu = document.createElement("div");
 mobileMenu.classList.add("mobile-menu");
 
+
+// Username/Login in mobile header
+let profileOriginal = document.querySelector("#header-top .nav-profile");
+let index_number;
+let logout_url = document.querySelector("#header-top .nav-profile a")?.getAttribute("href");
+
+const isAuthorized = (profileOriginal) ? true :  false;
+/// If user is logged
+if(isAuthorized) {
+    let match = profileOriginal.textContent.match(/\d+/);
+    if(match)
+        index_number = match[0];
+}
+else {
+    index_number = false;
+}
+let profileBtn = document.createElement("button");
+profileBtn.setAttribute("type", "button");
+profileBtn.textContent = (index_number) ? index_number : "Login";
+profileBtn.addEventListener("click", (e) => {
+    modalProfile.classList.add("active");
+});
+mobileMenu.append(profileBtn);
+
+
+// Username/Login for mobile as modal
+let modalProfile = document.createElement("div");
+modalProfile.classList.add("modal-profile");
+
+/// Mobile modal header
+let modalProfileHeader = document.createElement("div");
+modalProfileHeader.classList.add("modal-profile__header");
+
+let modalProfileClose = document.createElement("button");
+modalProfileClose.classList.add("modal-profile__close");
+modalProfileClose.innerHTML = '<i class="fa-solid fa-times"></i>';
+modalProfileClose.addEventListener("click", (e) => {
+    modalProfile.classList.remove("active");
+});
+
+let modalProfileText = document.createElement("div");
+modalProfileText.classList.add("modal-profile__title");
+modalProfileText.textContent = (isAuthorized) ? index_number : "Login form"
+
+modalProfileHeader.append(modalProfileText)
+modalProfileHeader.append(modalProfileClose);
+
+/// Mobile modal content
+let modalProfileContent = document.createElement("div");
+modalProfileContent.classList.add("modal-profile__content");
+if(isAuthorized) {
+    modalProfileContent.innerHTML = `<a class="btn btn-logout" href="${logout_url}">Logout</a>`
+}
+else {
+    let originalLoginForm = document.getElementById("loginform");
+    modalProfileContent.innerHTML = originalLoginForm.outerHTML;
+}
+
+modalProfile.append(modalProfileHeader);
+modalProfile.append(modalProfileContent);
+
+document.body.append(modalProfile);
+
+
 // Mobile menu button for open/close
 let mobileMenuBtn = document.createElement("button");
 mobileMenuBtn.classList.add("mobile-menu-burger");
+
+let mobileMenuBtnIcon = document.createElement("i");
+mobileMenuBtnIcon.classList.add("fa-solid", "fa-bars");
+mobileMenuBtn.append(mobileMenuBtnIcon);
+
 mobileMenuBtn.addEventListener("click", (e) => {
     mobileMenuContent.classList.toggle("active");
     document.documentElement.classList.toggle("lock");
+    mobileMenuBtnIcon.classList.toggle("fa-bars");
+    mobileMenuBtnIcon.classList.toggle("fa-times");
 });
 mobileMenu.append(mobileMenuBtn);
+
 
 // Mobile menu content
 let mobileMenuContent = document.createElement("div");
@@ -49,6 +121,14 @@ mobileMenuInside.forEach(a_elem => {
     });
 });
 mobileMenuContent.append(mobileMenuNav);
+
+/// Mobile menu content - languages
+let mobileMenuLangs = document.createElement("div");
+mobileMenuLangs.classList.add("mobile-langs");
+
+mobileMenuLangs.innerHTML = '<a href="/sr"><img src="/images/flag-rs.png"></a> <a href="/hu"><img src="/images/flag-hu.png"></a>'
+
+mobileMenuContent.append(mobileMenuLangs);
 
 
 document.body.prepend(mobileMenu);

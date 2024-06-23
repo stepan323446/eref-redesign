@@ -252,7 +252,7 @@ input[type="text"], input[type="password"], input[type="email"], select {
     border-radius: 3px !important;
     padding: 3px 10px !important;
 }
-input[type="button"], input[type="reset"], input[type="submit"], button {
+input[type="button"], input[type="reset"], input[type="submit"], button, .btn {
     color: var(--btn-primary-color) !important;
     font-size: 13px;
     padding: 1px 4px;
@@ -263,7 +263,7 @@ input[type="button"], input[type="reset"], input[type="submit"], button {
     transition: 0.15s ease;
     cursor: pointer !important;
 }
-input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, button:hover {
+input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, button:hover, .btn:hover {
     background: var(--btn-primary-background-hover) !important;
     color: var(--btn-primary-color-hover) !important;
 }
@@ -336,8 +336,6 @@ ul.error, ul.errors, ul.warning, ul.success, ul.notice {
 .successDiv::before {
     content: "\f058";
 }
-
-
 /* Footer */
 #footer {
     height: auto !important;
@@ -346,6 +344,12 @@ ul.error, ul.errors, ul.warning, ul.success, ul.notice {
 }
 
 .mobile-menu {
+    display: none;
+}
+.mobile-menu-content {
+    display: none;
+}
+.modal-profile {
     display: none;
 }
 @media only screen and (max-width: 700px) {
@@ -374,6 +378,8 @@ ul.error, ul.errors, ul.warning, ul.success, ul.notice {
     .mobile-menu {
         position: fixed;
         display: flex;
+        align-items: center;
+        justify-content: space-between;
         top: 0;
         left: 0;
         width: 100%;
@@ -382,24 +388,14 @@ ul.error, ul.errors, ul.warning, ul.success, ul.notice {
         z-index: 999;
     }
     /* Burger menu */
-    .mobile-menu > button {
+    .mobile-menu .mobile-menu-burger {
         position: relative;
         display: block;
         width: 30px;
-        height: 30px;
+        height: 35px;
         background: none !important;
         border: 1px solid #fff;
-    }
-    .mobile-menu > button::before,
-    .mobile-menu > button::after {
-        content: '';
-        position: absolute;
-        left: 0;
-
-        width: 100%;
-        height: 3px;
-        border-radius: 5px;
-        background: #fff;
+        color: #fff !important;
     }
     .mobile-menu > button::before {
         top: 7px;
@@ -424,6 +420,7 @@ ul.error, ul.errors, ul.warning, ul.success, ul.notice {
     }
     .mobile-menu-nav {
         list-style: none;
+        margin-bottom: 15px !important;
     }
     .mobile-menu-nav li {
         text-align: left;
@@ -445,11 +442,65 @@ ul.error, ul.errors, ul.warning, ul.success, ul.notice {
     .mobile-menu-li-children {
         display: none !important;
         list-style: none;
-        background: #454545;
+        background: var( --background-primary-sub);
         border-radius: 10px;
         padding-left: 15px;    
     }
     .mobile-menu-li-children.active {
         display: block !important;
+    }
+    .mobile-langs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    .mobile-langs a {
+        padding: 10px;
+        background: var( --background-primary-sub);
+        border-radius: 5px;
+    }
+
+    .modal-profile {
+        position: fixed;
+        display: none;
+        width: calc(100% - 10px);
+        background: #fff;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        border-radius: 5px;
+        box-shadow: 1px 1px 6px -3px rgba(0, 0, 0, 0.87);
+        z-index: 9999;
+    }
+    .modal-profile.active {
+        display: block;
+    }
+    .modal-profile .modal-profile__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #2764ff;
+    }
+    .modal-profile__header .modal-profile__title {
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        padding-left: 10px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .modal-profile__header .modal-profile__close {
+        padding: 6px;
+    }
+    .modal-profile__content #loginform {
+        background: 0;
+    }
+    .modal-profile__content #loginform form {
+        text-align: center;
+    }
+    .modal-profile__content .btn-logout {
+        display: inline-block;
+        padding: 10px;
+        margin: 30px 0 !important;
     }
 }
