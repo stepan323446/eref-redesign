@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box !important;
-    margin: 0 !important;
 }
 :root {
     --background-primary: #232323;
@@ -288,7 +287,7 @@ input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hove
     color: #1400ce !important;
 }
 .content {
-    line-height: 19px;
+    line-height: 24px;
 }
 .lists li {
     margin-bottom: 5px !important;
@@ -307,6 +306,16 @@ ul.error, ul.errors, ul.warning, ul.success, ul.notice {
     font-size: 14px;
     line-height: 18px;
     background-image: none !important;
+}
+/* img for h2 */
+#main > h2 {
+    padding-bottom: 4px;
+    font-size: 22px;
+}
+#main > h2 .fa-book {
+    color: #00b1e9;
+    font-size: 24px;
+    margin-right: 10px;
 }
 
 #loginform {
@@ -336,6 +345,67 @@ ul.error, ul.errors, ul.warning, ul.success, ul.notice {
 .successDiv::before {
     content: "\f058";
 }
+/* Professor page */
+.professor-blocks {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 15px;
+    list-style: none;
+}
+.professor-blocks > li {
+    border-radius: 3px;
+    overflow: hidden;
+    background: #F1F1F1;
+    border: 1px solid #71717163;
+}
+.proffesor-name {
+    color: #fff;
+    text-align: left;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+}
+.professor-block__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1px 10px;
+}
+.professor-block__header {
+    background: rgb(113 113 113);
+}
+.professor-block__header > a {
+    display: block;
+    margin-left: 5px;
+}
+.professor-blocks a {
+    color: #fff !important;
+    text-decoration: none !important;
+}
+ul.professorCat {
+    text-align: left;
+    list-style: none;
+    padding: 10px;
+}
+ul.professorCat li {
+    background: none !important;
+    line-height: 13px !important;
+}
+.professors.dialogTip img {
+    display: none;
+}
+.professor-blocks a[title="Knjiga nastavnika"] img {
+    display: none;
+}
+.professor-form {
+    text-align: left;
+    margin-bottom: 15px;
+}
+.professor-form input {
+    width: 100%;
+    max-width: 300px;
+}
+
 /* Footer */
 #footer {
     height: auto !important;
@@ -346,11 +416,85 @@ ul.error, ul.errors, ul.warning, ul.success, ul.notice {
 .mobile-menu {
     display: none;
 }
+.mobile-menu > * {
+    margin: 0 !important;
+}
 .mobile-menu-content {
     display: none;
 }
-.modal-profile {
+
+/* Modal */
+.modal-redesign {
+    position: fixed;
     display: none;
+    width: calc(100% - 10px);
+    max-width: 460px;
+    background: #fff;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 1px 1px 6px -3px rgba(0, 0, 0, 0.87);
+    
+    z-index: 9999;
+}
+.modal-redesign.active { 
+    display: block;
+}
+.modal-redesign .modal-redesign__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #2764ff;
+}
+.modal-redesign__header .modal-redesign__title {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding-left: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+.modal-redesign__header .modal-redesign__close {
+    padding: 10px;
+    margin: 0;
+}
+.modal-redesign__content {
+    padding: 10px;
+}
+.modal-redesign__content #loginform {
+    background: 0;
+}
+.modal-redesign__content #loginform form {
+    text-align: center;
+}
+.modal-redesign__content .btn-logout {
+    display: inline-block;
+    font-size: 15px;
+    padding: 8px 20px;
+    margin: 10px 0 !important;
+}
+.modal-redesign__background {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #0000006e;
+    z-index: 9998;
+}
+
+
+@media only screen and (max-width: 1160px) {
+    .professor-blocks {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media only screen and (max-width: 930px) {
+    .professor-blocks {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 @media only screen and (max-width: 700px) {
     #sidebar {
@@ -459,48 +603,10 @@ ul.error, ul.errors, ul.warning, ul.success, ul.notice {
         background: var( --background-primary-sub);
         border-radius: 5px;
     }
-
-    .modal-profile {
-        position: fixed;
-        display: none;
-        width: calc(100% - 10px);
-        background: #fff;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        overflow: hidden;
-        border-radius: 5px;
-        box-shadow: 1px 1px 6px -3px rgba(0, 0, 0, 0.87);
-        z-index: 9999;
-    }
-    .modal-profile.active {
-        display: block;
-    }
-    .modal-profile .modal-profile__header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: #2764ff;
-    }
-    .modal-profile__header .modal-profile__title {
-        color: #fff;
-        font-size: 12px;
-        font-weight: 600;
-        padding-left: 10px;
-        font-family: 'Roboto', sans-serif;
-    }
-    .modal-profile__header .modal-profile__close {
-        padding: 6px;
-    }
-    .modal-profile__content #loginform {
-        background: 0;
-    }
-    .modal-profile__content #loginform form {
-        text-align: center;
-    }
-    .modal-profile__content .btn-logout {
-        display: inline-block;
-        padding: 10px;
-        margin: 30px 0 !important;
+    
+}
+@media only screen and (max-width: 360px) {
+    .professor-blocks {
+        grid-template-columns: 1fr;
     }
 }
