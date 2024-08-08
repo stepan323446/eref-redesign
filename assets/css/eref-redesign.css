@@ -40,9 +40,6 @@ html.lock {
     background-size: 454px 75px !important;
     height: 76px !important;
 }
-#header-img::before {
-    
-}
 #header-img::after {
     content: 'E-referada / E-tanulmа́nyi osztа́ly';
     display: block;
@@ -153,6 +150,8 @@ html.lock {
     padding-left: 15px !important;
     float: none !important;
     width: 100% !important;
+    max-width: 1410px;
+    margin: 0 auto !important;
 }
 #breadcrumbs {
     padding: 5px 0;
@@ -195,6 +194,7 @@ table {
     padding: 3px;
     background: #759cff !important;
     padding: 3px;
+    overflow-x: auto;
 }
 /* Reset */
 #eboardTabs .ui-tabs-nav li {
@@ -313,6 +313,9 @@ input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hove
 }
 
 /* Post */
+.form {
+    margin-top: 10px !important;
+}
 .form h1 {
     background: #9d9d9d !important;
 }
@@ -321,6 +324,9 @@ input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hove
 }
 #main h2 {
     margin-bottom: 10px;
+}
+.form label.size {
+    width: auto !important;
 }
 .content a,
 .eboard-post-content a {
@@ -337,6 +343,11 @@ input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hove
 }
 .lists li {
     margin-bottom: 5px !important;
+}
+.form dd {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    clear: initial !important;
 }
 
 /* Notice */
@@ -451,6 +462,66 @@ ul.professorCat li {
     width: 100%;
     max-width: 300px;
 }
+div#student-data {
+    width: auto !important;
+}
+
+/* Profile */
+.profile-forms-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+.profile-forms-container >.form {
+    width: 100%;
+}
+#studentData h2,
+#profile h2 {
+    margin-top: 0 !important;
+}
+.profile-redesign {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 30px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.profile-info__table > * {
+    padding: 5px;
+    border-bottom: 1px solid #dbd2d2;
+}
+.profile-info > h2 {
+    margin-top: 0 !important;
+}
+.profile-info__table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.profile-image {
+    overflow: hidden;
+    width: 180px;
+    height: 240px;
+    border-radius: 5px;
+    border: 2px solid rgb(157, 157, 157);
+    margin-top: 40px;
+}
+.profile-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.profile-redesign .profile-right table {
+    width: fit-content !important;
+    border: 0;
+}
+.profile-redesign .profile-right .examTableCaption {
+    text-align: left;
+}
+.profile-redesign .profile-right td {
+    padding: 5px;
+}
 
 /* Footer */
 #footer {
@@ -531,7 +602,15 @@ ul.professorCat li {
     z-index: 9998;
 }
 
-
+@media only screen and (max-width: 1300px) {
+    .profile-image {
+        width: 145px;
+        height: 190px;
+    }
+    .profile-redesign {
+        grid-template-columns: 1fr 300px;
+    }
+}
 @media only screen and (max-width: 1160px) {
     .professor-blocks {
         grid-template-columns: 1fr 1fr 1fr;
@@ -541,6 +620,34 @@ ul.professorCat li {
     }
     #eboard-right {
         order: -1;
+    }
+    .profile-image {
+        width: 145px;
+        height: 190px;
+    }
+    .profile-redesign {
+        grid-template-columns: 1fr 300px;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .profile-redesign {
+        grid-template-columns: 1fr;
+    }
+    .profile-info {
+        order: 2;
+    }
+    .profile-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        order: 1;
+    }
+    .profile-image {
+        margin-right: 15px;
+    }
+    .profile-forms-container {
+        grid-template-columns: 1fr;
     }
 }
 @media only screen and (max-width: 930px) {
@@ -659,6 +766,14 @@ ul.professorCat li {
         border-radius: 5px;
     }
     
+}
+@media only screen and (max-width: 530px) {
+    .profile-right {
+        flex-direction: column;
+    }
+    .profile-redesign .profile-right .examTableCaption {
+        text-align: center;
+    }
 }
 @media only screen and (max-width: 450px) {
     #header-img {

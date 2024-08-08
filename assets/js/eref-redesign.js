@@ -1,5 +1,15 @@
 // Create redesign modal
 
+let pluginRootUrl = '';
+
+if (typeof chrome !== 'undefined' && typeof browser === 'undefined') {
+    // Chrome
+    pluginRootUrl = chrome.runtime.getURL('');
+} else if (typeof browser !== 'undefined') {
+    // Firefox
+    pluginRootUrl = browser.runtime.getURL('');
+}
+
 class ModalWindow {
     constructor() {
         let modalRedesign = document.createElement("div");
@@ -71,7 +81,7 @@ document.getElementsByTagName('head')[0].appendChild(meta);
 let faviconLink = document.createElement("link");
 faviconLink.rel = "icon";
 faviconLink.type = "image/png";
-faviconLink.href = chrome.runtime.getURL("assets/images/favicon.png");
+faviconLink.href = `${pluginRootUrl}assets/images/favicon.png`;
 document.getElementsByTagName('head')[0].appendChild(faviconLink);
 
 // Mobile menu header

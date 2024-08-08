@@ -22,6 +22,11 @@
             "matches": [ "https://eref.vts.su.ac.rs/*" ],
             "js" : ["assets/js/eref-redesign.js"],
             "run_at":"document_end"
+        },
+        {
+            "matches": [ "https://eref.vts.su.ac.rs/sr/default/studentsdata/*", "https://eref.vts.su.ac.rs/hu/default/studentsdata/*" ],
+            "js" : ["assets/js/eref-profil.js"],
+            "run_at":"document_end"
         }
     ],
     "web_accessible_resources": [
@@ -33,5 +38,11 @@
             "resources": ["assets/webfonts/*"],
             "matches": ["<all_urls>"]
         }
-    ]
+    ],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "eref-update-design@vts.su.ac.rs",
+            "strict_min_version": "57.0"
+        }
+    }
 }
