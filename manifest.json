@@ -24,8 +24,23 @@
             "run_at":"document_end"
         },
         {
-            "matches": [ "https://eref.vts.su.ac.rs/sr/default/studentsdata/*", "https://eref.vts.su.ac.rs/hu/default/studentsdata/*" ],
+            "matches": [ "https://eref.vts.su.ac.rs/*/default/studentsdata/*" ],
             "js" : ["assets/js/eref-profil.js"],
+            "run_at":"document_end"
+        },
+        {
+            "matches": [ "https://eref.vts.su.ac.rs/*/default/subjects/*" ],
+            "js" : ["assets/js/eref-etable.js"],
+            "run_at":"document_end"
+        },
+        {
+            "matches": [ "https://eref.vts.su.ac.rs/*/default/professors/*" ],
+            "js" : ["assets/js/eref-professor.js"],
+            "run_at":"document_end"
+        },
+        {
+            "matches": [ "https://eref.vts.su.ac.rs/*/default/subjects/*" ],
+            "js" : ["assets/js/eref-subjects.js"],
             "run_at":"document_end"
         }
     ],
