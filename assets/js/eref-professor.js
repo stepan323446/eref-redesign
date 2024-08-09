@@ -88,7 +88,7 @@ if (professorBlocks.length > 0) {
     let inputSearch = document.createElement('input');
     inputContainer.append(inputSearch);
 
-    inputSearch.placeholder = "Enter professor's name";
+    inputSearch.placeholder = (language == 'sr') ? 'Unesite ime profesora' : 'Írja be a professzor nevét';
     inputSearch.type = 'text';
     inputSearch.id = 'search-professor';
     inputSearch.addEventListener('input', (e) => {
