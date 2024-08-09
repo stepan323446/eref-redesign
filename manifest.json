@@ -29,7 +29,7 @@
             "run_at":"document_end"
         },
         {
-            "matches": [ "https://eref.vts.su.ac.rs/*/default/subjects/*" ],
+            "matches": [ "https://eref.vts.su.ac.rs/*/default/eboard/*" ],
             "js" : ["assets/js/eref-etable.js"],
             "run_at":"document_end"
         },
@@ -41,6 +41,14 @@
         {
             "matches": [ "https://eref.vts.su.ac.rs/*/default/subjects/*" ],
             "js" : ["assets/js/eref-subjects.js"],
+            "run_at":"document_end"
+        },
+        {
+            "matches": [ 
+                "https://eref.vts.su.ac.rs/*/default/subjects/*", 
+                "https://eref.vts.su.ac.rs/*/default/literature/*" 
+            ],
+            "js" : ["assets/js/eref-legends.js"],
             "run_at":"document_end"
         }
     ],

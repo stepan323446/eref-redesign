@@ -273,16 +273,25 @@ table {
     grid-template-columns: 1fr 400px;
     gap: 30px;
 }
+ul.eboard-post-toolbar li a.examples  {
+    font-size: 12px;
+    text-indent: 0 !important;
+    background: 0 !important;
+}
+
 /* Grades */
-#pointsMessage {
+#pointsMessage,
+#pointsMessageExam {
     position: fixed !important;
     top: 190px !important;
     left: 20px !important;
 }
-#pointsMessage .ui-widget-header {
+#pointsMessage .ui-widget-header,
+#pointsMessageExam .ui-widget-header {
     background: rgb(117, 156, 255) !important;
 }
-#pointsMessage .ui-tabs .ui-tabs-panel {
+#pointsMessage .ui-tabs .ui-tabs-panel,
+#pointsMessageExam .ui-tabs .ui-tabs-panel{
     overflow: hidden !important;
 }
 
@@ -325,6 +334,8 @@ input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hove
 }
 .form fieldset {
     background: #fff !important;
+    min-inline-size: auto;
+    overflow-x: auto;
 }
 #main h2 {
     margin-bottom: 10px;
@@ -527,6 +538,7 @@ div#student-data {
     background: #fff;
     padding: 20px;
     border-radius: 5px;
+    border: 1px solid var(--border-color);
 }
 
 .profile-info__table > * {
@@ -563,6 +575,35 @@ div#student-data {
 }
 .profile-redesign .profile-right td {
     padding: 5px;
+}
+ul.document-download {
+    line-height: 20px !important;
+    height: auto !important;
+    text-align: left;
+}
+ul.document-download li {
+    display: inline-block !important;
+    float: initial !important;
+}
+.document-download a {
+    position: relative;
+    color: #000cb1 !important;
+    background: 0 !important;
+    text-indent: 0 !important;
+    float: initial !important;
+}
+.eboard-post-toolbar a::before,
+.document-download a::before {
+    content: "\f15b";
+    font-family: 'Font Awesome 6 Free';
+}
+/* Uputstvo */
+ul.niceUL li {
+    height: auto !important;
+}
+ul.niceUL, ul.niceUL-wide {
+    padding-left: 15px !important;
+    list-style: none;
 }
 
 /* Footer */
@@ -649,6 +690,11 @@ div#student-data {
     z-index: 9998;
 }
 
+.doc-redesign-icon {
+    width: 20px;
+    height: 20px;
+}
+
 @media only screen and (max-width: 1300px) {
     .profile-image {
         width: 145px;
@@ -709,7 +755,8 @@ div#student-data {
     #content {
         display: block;
     }
-    #pointsMessage {
+    #pointsMessage,
+    #pointsMessageExam {
         position: relative !important;
         width: 100% !important;
         top: 0 !important;

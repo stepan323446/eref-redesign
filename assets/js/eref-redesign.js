@@ -193,6 +193,17 @@ if (h2img != null) {
     h2img.remove();
     pageh2.prepend(newIcon);
 }
+// Replace excel icons
 
+let excelIcons = document.querySelectorAll('img[src="/images/excel.gif"]');
+excelIcons?.forEach(excelIcon => {
+    excelIcon.setAttribute('src', `${pluginRootUrl}assets/images/excel.png`);
+    excelIcon.classList.add('doc-redesign-icon');
+});
 
-
+// Replace word icons
+let wordIcons = document.querySelectorAll('img[src="/images/word.gif"]');
+wordIcons?.forEach(wordIcon => {
+    wordIcon.setAttribute('src', `${pluginRootUrl}assets/images/word.png`);
+    wordIcon.classList.add('doc-redesign-icon');
+});
