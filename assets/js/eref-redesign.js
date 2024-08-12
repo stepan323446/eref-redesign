@@ -13,6 +13,44 @@ const language = ((window.location.href + '/').includes('/sr/')) ? 'sr' : 'hu';
 let profileOriginal = document.querySelector("#header-top .nav-profile");
 const isAuthorized = (profileOriginal) ? true : false;
 
+// Style refs for every browsers
+let style = document.createElement('style');
+
+// Add your CSS rules as text and font family
+style.innerHTML = `
+:root {
+    --eref-background-url: url(${pluginRootUrl}assets/images/eref-background.png);
+    --eref-header-logo-url: url(${pluginRootUrl}assets/images/eref-header.png);
+}
+
+:root, :host {
+  --fa-style-family-classic: 'Font Awesome 6 Free';
+  --fa-font-solid: normal 900 1em/1 'Font Awesome 6 Free'; 
+}
+
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("${pluginRootUrl}assets/webfonts/fa-solid-900.woff2") format("woff2"), url("${pluginRootUrl}assets/webfonts/fa-solid-900.ttf") format("truetype"); 
+}
+@font-face {
+  font-family: 'Font Awesome 6 Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("${pluginRootUrl}assets/webfonts/fa-brands-400.woff2") format("woff2"), url("${pluginRootUrl}assets/webfonts/fa-brands-400.ttf") format("truetype"); 
+}
+
+.fas,
+.fa-solid {
+  font-weight: 900; }
+`;
+
+// Append the <style> element to the <head> or <body>
+document.head.appendChild(style);
+
 class ModalWindow {
     constructor() {
         let modalRedesign = document.createElement("div");
@@ -207,3 +245,62 @@ wordIcons?.forEach(wordIcon => {
     wordIcon.setAttribute('src', `${pluginRootUrl}assets/images/word.png`);
     wordIcon.classList.add('doc-redesign-icon');
 });
+
+// Footer
+let footer = document.createElement('footer');
+let originalFooter = document.getElementById('footer');
+
+footer.classList.add('footer-redesign');
+footer.innerHTML = `
+    <div class="footer-left">
+        <div class="footer-plugin-info">
+            <h3>EREF REDESIGN</h3>
+
+            <p>The "Eref Redesign" plugin is designed to create a modern look with additional functionality and adaptability of the site eref.vts.su.ac.rs.</p>
+
+            <p>Version: 1.0.0</p>
+        </div>
+    </div>
+    <div class="footer-right">
+        <div class="footer-links">
+            <h4>Official links</h4>
+
+            <ul>
+                <li>
+                    <a href="https://www.vts.su.ac.rs/" target="_blank">Official website</a>
+                </li>
+                <li>
+                    <a href="https://moodle2.vts.su.ac.rs/" target="_blank">Moodle</a>
+                </li>
+                <li>
+                    <a href="https://bbb.vts.su.ac.rs/" target="_blank">BBB</a>
+                </li>
+                <li>
+                    <a href="https://webmail.vts.su.ac.rs/" target="_blank">VTS Mail (Webmail)</a>
+                </li>
+                <li>
+                    <a href="https://biblioteka.vts.su.ac.rs/" target="_blank">VTS Library</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>Community</h4>
+
+            <ul>
+                <li>
+                    <a href="https://discord.gg/9G6bUvvRzT" target="_blank">Discord (SRB)</a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/wutsh_insider/" target="_blank">Instagram</a>
+                </li>
+                <li>
+                    <a href="https://github.com/stepan323446/eref-redesign" target="_blank">Github plugin</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+`;
+
+document.body.append(footer);
+document.body.append(originalFooter);

@@ -47,7 +47,7 @@ In this guide we will give examples based on 3 browsers. Some steps may differ d
 
 ![Chrome step 4](/assets/readme/chrome-3.jpg)
 
-5. Make sure the plugin is downloaded and enabled. Ready
+5. Make sure the plugin is installed and enabled. Ready
 
 
 

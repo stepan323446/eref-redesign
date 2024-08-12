@@ -18,6 +18,7 @@
 
     --font-awesome: "Font Awesome 6 Free";
     --default-font: Verdana, Arial, Helvetica, sans-serif;
+    --h-font: Verdana, Arial, Helvetica, sans-serif;
 }
 html.lock {
     overflow: hidden !important;
@@ -34,11 +35,11 @@ html.lock {
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-image: url(chrome-extension://__MSG_@@extension_id__/assets/images/eref-background.png) !important;
+    background-image: var(--eref-background-url) !important;
 }
 #header-img {
     position: relative;
-    background: url(chrome-extension://__MSG_@@extension_id__/assets/images/eref-header.png) !important;
+    background: var(--eref-header-logo-url) !important;
     background-repeat: no-repeat !important;
     background-size: 454px 75px !important;
     height: 76px !important;
@@ -608,6 +609,7 @@ ul.niceUL, ul.niceUL-wide {
 
 /* Footer */
 #footer {
+    line-height: 18px !important;
     height: auto !important;
     background: #b8b8b8 !important;
     padding: 30px 10px 10px 10px;
@@ -693,6 +695,60 @@ ul.niceUL, ul.niceUL-wide {
 .doc-redesign-icon {
     width: 20px;
     height: 20px;
+}
+
+/* Redesign footer */
+.footer-redesign {
+    display: flex;
+    justify-content: space-between;
+    background: var(--background-primary);
+
+    padding: 30px 25px 50px 25px;
+    color: #adadad;
+    text-align: left;
+}
+.footer-plugin-info {
+    max-width: 420px;
+}
+.footer-right {
+    display: flex;
+    flex-shrink: 0;
+}
+.footer-links {
+    margin-left: 40px;
+}
+.footer-links ul {
+    list-style: none;
+}
+.footer-links li {
+    margin-bottom: 5px;
+}
+.footer-redesign h3 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+.footer-redesign h4 {
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: var(--default-font);
+    margin-bottom: 30px;
+}
+.footer-redesign p,
+.footer-redesign a {
+    font-size: 14px;
+    line-height: 20px;
+    font-family: var(--default-font);
+    
+}
+.footer-redesign a {
+    color: #adadad;
+}
+.footer-redesign a:hover {
+    color: #fff;
+}
+.footer-redesign p {
+    margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 1300px) {
@@ -861,6 +917,21 @@ ul.niceUL, ul.niceUL-wide {
     }
     
 }
+@media only screen and (max-width: 550px) {
+    .footer-redesign {
+        flex-direction: column;
+    }
+    .footer-plugin-info {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+    .footer-right {
+        justify-content: space-between;
+    }
+    .footer-links {
+        margin-left: 0;
+    }
+}
 @media only screen and (max-width: 530px) {
     .profile-right {
         flex-direction: column;
@@ -880,5 +951,13 @@ ul.niceUL, ul.niceUL-wide {
 @media only screen and (max-width: 360px) {
     .professor-blocks {
         grid-template-columns: 1fr;
+    }
+}
+@media only screen and (max-width: 290px) {
+    .footer-right {
+        flex-direction: column;
+    }
+    .footer-links {
+        margin-bottom: 30px;
     }
 }
