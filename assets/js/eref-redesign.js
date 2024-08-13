@@ -12,6 +12,8 @@ const language = ((window.location.href + '/').includes('/sr/')) ? 'sr' : 'hu';
 
 let profileOriginal = document.querySelector("#header-top .nav-profile");
 const isAuthorized = (profileOriginal) ? true : false;
+const isAuthPage = (document.getElementById('login-wrap')) ? true : false;
+console.log(isAuthPage)
 
 // Style refs for every browsers
 let style = document.createElement('style');
@@ -182,44 +184,51 @@ mobileMenuBtn.addEventListener("click", (e) => {
 });
 mobileMenu.append(mobileMenuBtn);
 
+// Is auth page, set some styles
+if(isAuthPage) {
+    document.getElementById('content').classList.add('auth-page');
+}
 
-// Mobile menu content
-let mobileMenuContent = document.createElement("div");
-mobileMenuContent.classList.add("mobile-menu-content");
+if(!isAuthPage)
+{
+    // Mobile menu content
+    let mobileMenuContent = document.createElement("div");
+    mobileMenuContent.classList.add("mobile-menu-content");
 
-/// Mobile menu content - nav
-let mobileMenuNav = document.createElement("ul");
-mobileMenuNav.classList.add("mobile-menu-nav")
+    /// Mobile menu content - nav
+    let mobileMenuNav = document.createElement("ul");
+    mobileMenuNav.classList.add("mobile-menu-nav")
 
-let headerOriginalMenu = document.querySelector("#header-menu .nav");
-mobileMenuNav.innerHTML = headerOriginalMenu.innerHTML;
+    let headerOriginalMenu = document.querySelector("#header-menu .nav");
+    mobileMenuNav.innerHTML = headerOriginalMenu.innerHTML;
 
-let mobileMenuInside = mobileMenuNav.querySelectorAll("a.sf-with-ul");
-mobileMenuInside.forEach(a_elem => {
-    let sub_menu = a_elem.parentElement.querySelector("ul");
-    sub_menu.style.display = "block";
-    sub_menu.style.visibility = "visible";
-    sub_menu.classList.add("mobile-menu-li-children");
+    let mobileMenuInside = mobileMenuNav.querySelectorAll("a.sf-with-ul");
+    mobileMenuInside.forEach(a_elem => {
+        let sub_menu = a_elem.parentElement.querySelector("ul");
+        sub_menu.style.display = "block";
+        sub_menu.style.visibility = "visible";
+        sub_menu.classList.add("mobile-menu-li-children");
 
-    a_elem.addEventListener("click", (e) => {
-        e.preventDefault();
+        a_elem.addEventListener("click", (e) => {
+            e.preventDefault();
 
-        sub_menu.classList.toggle("active");
+            sub_menu.classList.toggle("active");
+        });
     });
-});
-mobileMenuContent.append(mobileMenuNav);
+    mobileMenuContent.append(mobileMenuNav);
 
-/// Mobile menu content - languages
-let mobileMenuLangs = document.createElement("div");
-mobileMenuLangs.classList.add("mobile-langs");
+    /// Mobile menu content - languages
+    let mobileMenuLangs = document.createElement("div");
+    mobileMenuLangs.classList.add("mobile-langs");
 
-mobileMenuLangs.innerHTML = '<a href="/sr"><img src="/images/flag-rs.png"></a> <a href="/hu"><img src="/images/flag-hu.png"></a>'
+    mobileMenuLangs.innerHTML = '<a href="/sr"><img src="/images/flag-rs.png"></a> <a href="/hu"><img src="/images/flag-hu.png"></a>'
 
-mobileMenuContent.append(mobileMenuLangs);
+    mobileMenuContent.append(mobileMenuLangs);
 
 
-document.body.prepend(mobileMenu);
-document.body.append(mobileMenuContent);
+    document.body.prepend(mobileMenu);
+    document.body.append(mobileMenuContent);
+}
 
 // Change h2img for h2 titles on pages
 let h2img = document.querySelector('.h2img');

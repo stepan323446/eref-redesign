@@ -24,36 +24,11 @@ The plugin supports site languages ​​such as Serbian (sr) and Hungarian (hu)
 
 ## Installation
 
-In this guide we will give examples based on 3 browsers. Some steps may differ depending on the browser, but they are basically the same.
+Instructions for each of the popular browsers are available at [github wiki](https://github.com/stepan323446/eref-redesign/wiki). The instructions also include mobile browsers that support extensions. A list of such browsers can be found in the [Compatibility](#compatibility) section
 
-### Google Chrome (Chromium, Desktop)
+Installing the plugin depends on what your browser is based on (Gecko or Chromium).
 
-> [!NOTE]
-> Place the plugin folder in one place and do not move it. After installing the plugin, its path is bound. 
-> 
-> If you move the folder, the plugin will be removed from the browser, then specify its path again, following the steps below.
-
-1. Go to the tab with all extensions in your browser. In chrome, select **the extensions icon** and click "**Manage extensions**"
-
-![Chrome step 1](/assets/readme/chrome-1.jpg)
-
-2. Enable **Developer mode** to be able to load your own unpackaged extensions
-
-3. Click on the "**Load unpacked**" button that appears
-
-![Chrome step 2 and 3](/assets/readme/chrome-2.jpg)
-
-4. Go to the extension folder where `manifest.json` is located. Select this exact folder
-
-![Chrome step 4](/assets/readme/chrome-3.jpg)
-
-5. Make sure the plugin is installed and enabled. Ready
-
-
-
-### Firefox (Gecko, Desktop)
-
-Soon
+To install the extension, go to the [Realeses](https://github.com/stepan323446/eref-redesign/releases) section and select the desired file (`.zip` for chromium, `.ixt` for gecko)
 
 ## Compatibility 
 
@@ -65,6 +40,14 @@ The following tables list the browsers that were tested.
 | Browser | Based on | Version | Is support? |
 | :-: | :-: | :-: | :-: |
 | Microsoft Edge | Chromium | `127.0.2651.86` | ✅ |
+| Google Chrome | Chromium | `127.0.6533.99` | ✅ |
+| Yandex browser | Chromium | `24.6.1.852` | ✅ |
+| Brave | Chromium | `1.68.137` | ✅ |
+| Firefox | Gecko | `127.0` | ❌ |
+| Firefox Enterprise | Gecko | `---` | ✅ |
+| Firefox Developer | Gecko | `---` | ✅ |
+| Nightly | Gecko | `---` | ✅ |
+| Floorp | Gecko | `11.16.0` | ✅ |
 
 ### For mobile:
 

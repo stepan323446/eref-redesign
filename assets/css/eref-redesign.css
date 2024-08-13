@@ -23,6 +23,22 @@
 html.lock {
     overflow: hidden !important;
 }
+
+/* Table */
+td {
+    padding-left: 1px;
+    padding-right: 1px;
+    border-left: 1px solid #CACACA;
+    border-bottom: 1px solid #CACACA;
+    border-right: 1px solid #CACACA;
+}
+th {
+    background-color: #70828F;
+    border: none;
+    margin: 0 2px;
+    padding: 0 10px 0 10px;
+  }
+
 /* Header menu */
 #header-img-back {
     position: relative;
@@ -37,14 +53,16 @@ html.lock {
     height: 100%;
     background-image: var(--eref-background-url) !important;
 }
-#header-img {
+#header-img,
+#header-img-login {
     position: relative;
     background: var(--eref-header-logo-url) !important;
     background-repeat: no-repeat !important;
     background-size: 454px 75px !important;
     height: 76px !important;
 }
-#header-img::after {
+#header-img::after,
+#header-img-login::after {
     content: 'E-referada / E-tanulmа́nyi osztа́ly';
     display: block;
     position: absolute;
@@ -56,6 +74,14 @@ html.lock {
     font: bold small-caps 13px sans-serif;
     border-top-left-radius: 3px;
 }
+#login-wrap {
+    background: 0 !important;
+}
+#login-wrap #header,
+#login-wrap #header-img {
+    display: none !important;
+}
+
 #header-top {
     position: relative;
     display: flex;
@@ -364,6 +390,25 @@ input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hove
     display: grid;
     grid-template-columns: 1fr 1fr;
     clear: initial !important;
+}
+
+/* Auth page */
+.auth-page {
+    display: block !important;
+}
+#login-wrap {
+    height: auto !important;
+    width: auto !important;
+    max-width: 421px;
+    margin: 0 auto;
+    margin-top: 0 !important;
+    padding-top: 40px;
+}
+#login-wrap #loginform {
+    background: #fff !important;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 15px;
 }
 
 /* Notice */
@@ -726,6 +771,7 @@ ul.niceUL, ul.niceUL-wide {
 .footer-redesign h3 {
     color: #fff;
     margin-bottom: 20px;
+    font-family: var(--default-font);
 }
 .footer-redesign h4 {
     color: #fff;
@@ -739,6 +785,7 @@ ul.niceUL, ul.niceUL-wide {
     font-size: 14px;
     line-height: 20px;
     font-family: var(--default-font);
+    text-decoration: none;
     
 }
 .footer-redesign a {
