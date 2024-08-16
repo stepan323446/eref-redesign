@@ -28,7 +28,7 @@ Instructions for each of the popular browsers are available at [github wiki](htt
 
 Installing the plugin depends on what your browser is based on (Gecko or Chromium).
 
-To install the extension, go to the [Realeses](https://github.com/stepan323446/eref-redesign/releases) section and select the desired file (`.zip` for chromium, `.ixt` for gecko)
+To install the extension, go to the [Realeses](https://github.com/stepan323446/eref-redesign/releases) section and select the desired file (`.zip` for chromium, `.xpi` for gecko)
 
 ## Compatibility 
 
@@ -53,12 +53,34 @@ The following tables list the browsers that were tested.
 
 | Browser | Based on | Version | Is support? |
 | :-: | :-: | :-: | :-: |
-| [Kiwi](https://kiwibrowser.com/) | Chromium | `---` | ✅ |
-| [Lemur](https://www.lemurbrowser.com/new_version_test/app/en.html) | Chromium | `---` | ✅ |
-| [Iceraven](https://github.com/fork-maintainers/iceraven-browser) | Gecko | `---` | ✅ |
+| [Kiwi](https://kiwibrowser.com/) | Chromium | `124.0.6327.4` | ✅ |
+| [Lemur](https://www.lemurbrowser.com/new_version_test/app/en.html) | Chromium | `2.6.1.027` | ✅ |
+| [Mises](https://www.mises.site/) | Chromium | `224081406` | ✅ |
+| [Iceraven](https://github.com/fork-maintainers/iceraven-browser) | Gecko | `2.22.0` | ✅ |
 
 > [!NOTE]
 > The list of mobile browsers included those that support the installation of extensions
+
+## PWA (Progressive web appliacation)
+
+One of the defining aspects of a PWA is that it can be promoted by the browser for installation on the device. Once installed, a PWA appears to users as a platform-specific app, a permanent feature of their device which they can launch directly from the operating system like any other app.
+
+We can summarize this as follows:
+
+*   Supporting browsers promote the PWA to the user for installation on the device.
+*   The PWA can be installed like a platform-specific app, and can customize the install process.
+*   Once installed, the PWA gets an app icon on the device, alongside platform-specific apps.
+*   Once installed, the PWA can be launched as a standalone app, rather than a website in a browser.
+
+> [!NOTE]
+> Gecko browsers do not support PWA
+
+| Desktop guide | Mobile guide | 
+| :-: | :-: |
+|![desktop-pwa](/assets/readme/pwa-desktop.jpg) |![mobile-pwa](/assets/readme/pwa-mobile.jpg) |
+| When you visit the eref website, at the top of the address bar you will see an icon that will prompt you to install eref as an application | Visit the eref website. Then open the browser menu and select "**Add to Home Screen**" |
+
+*Actions in different browsers may differ, but the principle is the same*
 
 ## FAQ
 

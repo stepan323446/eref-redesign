@@ -557,6 +557,7 @@ ul.error, ul.errors, ul.warning, ul.success, ul.notice {
 }
 /* img for h2 */
 #main > h2 {
+    padding-left: 10px;
     padding-bottom: 4px;
     font-size: 22px;
 }

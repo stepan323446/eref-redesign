@@ -1,4 +1,6 @@
-// Create redesign modal
+
+
+
 
 let pluginRootUrl = '';
 let browserType = '';
@@ -16,6 +18,29 @@ const language = ((window.location.href + '/').includes('/sr/')) ? 'sr' : 'hu';
 let profileOriginal = document.querySelector("#header-top .nav-profile");
 const isAuthorized = (profileOriginal) ? true : false;
 const isAuthPage = (document.getElementById('login-wrap')) ? true : false;
+
+
+const manifest = {
+    name: "Eref",
+    start_url: (language == 'sr') ? 'https://eref.vts.su.ac.rs/sr' : 'https://eref.vts.su.ac.rs/hu',
+    display: "standalone",
+    background_color: "#ffffff",
+    theme_color: "#000000",
+    icons: [
+      {
+        src: pluginRootUrl + "assets/images/favicon-app.png",
+        type: "image/png",
+        sizes: "144x144"
+      }
+    ]
+};
+console.log(manifest)
+const manifestLink = document.createElement('link');
+manifestLink.rel = 'manifest';
+manifestLink.href = 'data:application/manifest+json,' + encodeURIComponent(JSON.stringify(manifest));
+
+// Append the manifest link to the head of the document
+document.head.appendChild(manifestLink);
 
 // Style refs for every browsers
 let style = document.createElement('style');
@@ -71,6 +96,8 @@ input[type="button"], input[type="reset"], input[type="submit"], .form input.but
 // Append the <style> element to the <head> or <body>
 document.head.appendChild(style);
 
+
+// Create redesign modal
 class ModalWindow {
     constructor() {
         let modalRedesign = document.createElement("div");
