@@ -39,19 +39,23 @@ The following tables list the browsers that were tested.
 ### For desktop:
 | Browser | Based on | Version | Is support? |
 | :-: | :-: | :-: | :-: |
-| Microsoft Edge | Chromium | `127.0.2651.86` | ✅ |
-| Google Chrome | Chromium | `127.0.6533.99` | ✅ |
-| Yandex browser | Chromium | `24.6.1.852` | ✅ |
-| Brave | Chromium | `1.68.137` | ✅ |
-| Firefox | Gecko | `127.0` | ❌ |
-| Firefox Enterprise | Gecko | `---` | ✅ |
-| Firefox Developer | Gecko | `---` | ✅ |
-| Nightly | Gecko | `---` | ✅ |
-| Floorp | Gecko | `11.16.0` | ✅ |
+| [Microsoft Edge](https://www.microsoft.com/en-us/edge/) | Chromium | `127.0.2651.86` | ✅ |
+| [Google Chrome](https://www.google.com/chrome/) | Chromium | `127.0.6533.99` | ✅ |
+| [Yandex browser](https://browser.yandex.com/) | Chromium | `24.6.1.852` | ✅ |
+| [Vivaldi](https://vivaldi.com/) | Chromium | `6.8.3381.53` | ✅ |
+| [Brave](https://brave.com/) | Chromium | `1.68.137` | ✅ |
+| [Firefox](https://www.mozilla.org/en-US/firefox/new/) | Gecko | `127.0` | ❌ |
+| [Firefox Developer](https://www.mozilla.org/en-US/firefox/developer/) | Gecko | `130.0b5` | ✅ |
+| [Nightly](https://www.mozilla.org/en-US/firefox/131.0a1/releasenotes/) | Gecko | `131.0a1` | ✅ |
+| [Floorp](https://floorp.app/) | Gecko | `11.16.0` | ✅ |
 
 ### For mobile:
 
-Not tested
+| Browser | Based on | Version | Is support? |
+| :-: | :-: | :-: | :-: |
+| [Kiwi](https://kiwibrowser.com/) | Chromium | `---` | ✅ |
+| [Lemur](https://www.lemurbrowser.com/new_version_test/app/en.html) | Chromium | `---` | ✅ |
+| [Iceraven](https://github.com/fork-maintainers/iceraven-browser) | Gecko | `---` | ✅ |
 
 > [!NOTE]
 > The list of mobile browsers included those that support the installation of extensions

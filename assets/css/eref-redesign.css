@@ -332,7 +332,8 @@ input[type="text"], input[type="password"], input[type="email"], select {
 input[type="button"], input[type="reset"], input[type="submit"], button, .btn {
     color: var(--btn-primary-color) !important;
     font-size: 13px;
-    padding: 1px 4px;
+    height: auto !important;
+    padding: 7px 19px !important;
 
     font-family: var(--default-font);
     background: var(--btn-primary-background) !important;
@@ -350,6 +351,135 @@ input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hove
 }
 #eboard-right p {
     padding: 5px 0;
+}
+#simplesearch {
+    width: 100%;
+}
+#eboard-right fieldset:first-child {
+    display: none !important;
+}
+#eboard-right label {
+    line-height: 18px;
+}
+input[type="radio"] {
+    margin-right: 6px;
+    margin-bottom: 3px;
+}
+input[type="radio"] {
+    position: relative;
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: #fff;
+    /* Not removed via appearance */
+    margin: 0;
+    margin-right: 5px;
+    padding: 0 !important;
+    cursor: pointer;
+
+    color: var(--border-color);
+    width: 15.33px;
+    height: 15.33px;
+    border: 0.15em solid var(--border-color) !important;
+    border-radius: 50%;
+    overflow: hidden;
+
+    transform: translateY(-1px);
+}
+input[type="radio"]::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--btn-primary-background);
+}
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+input[type="checkbox"] {
+    position: relative;
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: #fff;
+    /* Not removed via appearance */
+    margin: 0;
+
+    font: inherit;
+    color: var(--border-color);;
+    width: 1.15em;
+    height: 1.15em;
+    border: 2px solid var(--border-color);
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+
+    display: grid;
+    place-content: center;
+}
+input[type="checkbox"]:not(:disabled) {
+    cursor: pointer;
+}
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--btn-primary-background);
+}
+input[type="checkbox"]:disabled:before {
+    box-shadow: inset 1em 1em var(--border-color);
+    opacity: 0.7;
+}
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+input[type="checkbox"]:checked::after {
+    position: absolute;
+    content: "\f00c";
+    font-size: 8px;
+    font-family: var(--font-awesome);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.radioButtons input[type="checkbox"] {
+    transform: translateY(7px);
+}
+
+#main > *:not(#eboardTabs) .zend_form > * {
+    display: block !important;
+}
+#loginform label {
+    display: block;
+    font-size: 15px !important;
+}
+#loginform form p {
+    margin-bottom: 10px !important;
+}
+#loginform p.normal {
+    width: auto !important;
+}
+#loginform form p {
+    padding: 0 !important;
+}
+#sidebar #loginform input[type=text],
+#sidebar #loginform input[type=password] {
+    width: 100% !important;
+}
+.tableYear input[type="checkbox"] {
+    margin: 0 auto;
 }
 
 /* Post */
@@ -577,6 +707,10 @@ div#student-data {
 #profile h2 {
     margin-top: 0 !important;
 }
+#studentData input[type="checkbox"] {
+    margin: 0 auto;
+}
+
 .profile-redesign {
     display: grid;
     grid-template-columns: 1fr 400px;
@@ -697,15 +831,16 @@ ul.niceUL, ul.niceUL-wide {
 }
 .modal-redesign__header .modal-redesign__title {
     color: #fff;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
     padding-left: 10px;
     font-family: 'Roboto', sans-serif;
 }
 .modal-redesign__header .modal-redesign__close {
-    padding: 10px;
+    padding: 10px !important;
     margin: 0;
 }
+
 .modal-redesign__content {
     font-family: var(--default-font);
     padding: 10px;
@@ -962,7 +1097,9 @@ ul.niceUL, ul.niceUL-wide {
         background: var( --background-primary-sub);
         border-radius: 5px;
     }
-    
+    #main {
+        padding: 0 !important;
+    }
 }
 @media only screen and (max-width: 550px) {
     .footer-redesign {
@@ -998,6 +1135,22 @@ ul.niceUL, ul.niceUL-wide {
 @media only screen and (max-width: 360px) {
     .professor-blocks {
         grid-template-columns: 1fr;
+    }
+    #ui-datepicker-div {
+        left: 50% !important;
+        transform: translateX(-50%);
+        width: calc(100% - 25px) !important;
+    }
+    #eboard-right select {
+        width: 100% !important;
+    }
+    .profile-forms-container .form dd {
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+    }
+    .profile-forms-container input[type="submit"],
+    .profile-forms-container .submit-element {
+        margin: 0 auto !important;
     }
 }
 @media only screen and (max-width: 290px) {

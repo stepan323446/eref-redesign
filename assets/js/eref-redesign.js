@@ -1,19 +1,21 @@
 // Create redesign modal
 
 let pluginRootUrl = '';
+let browserType = '';
 if (typeof chrome !== 'undefined' && typeof browser === 'undefined') {
     // Chrome
     pluginRootUrl = chrome.runtime.getURL('');
+    browserType = 'chromium';
 } else if (typeof browser !== 'undefined') {
     // Firefox
     pluginRootUrl = browser.runtime.getURL('');
+    browserType = 'gecko';
 }
 const language = ((window.location.href + '/').includes('/sr/')) ? 'sr' : 'hu';
 
 let profileOriginal = document.querySelector("#header-top .nav-profile");
 const isAuthorized = (profileOriginal) ? true : false;
 const isAuthPage = (document.getElementById('login-wrap')) ? true : false;
-console.log(isAuthPage)
 
 // Style refs for every browsers
 let style = document.createElement('style');
@@ -47,7 +49,23 @@ style.innerHTML = `
 
 .fas,
 .fa-solid {
-  font-weight: 900; }
+  font-weight: 900; 
+}
+
+input[type="button"], input[type="reset"], input[type="submit"], .form input.button, button, .btn, #loginform input.button {
+    padding: 6px 19px !important;
+    font-size: 13px;
+}
+.mobile-menu button:first-child {
+    font-size: 14px;
+    padding: 5px !important;
+}
+.mobile-menu-burger {
+    width: 30px;
+    height: 35px !important;
+    font-size: 14px;
+    padding: 0 !important;
+}
 `;
 
 // Append the <style> element to the <head> or <body>
@@ -166,31 +184,29 @@ profileBtn.addEventListener("click", (e) => {
 mobileMenu.append(profileBtn);
 
 
-
-
-// Mobile menu button for open/close
-let mobileMenuBtn = document.createElement("button");
-mobileMenuBtn.classList.add("mobile-menu-burger");
-
-let mobileMenuBtnIcon = document.createElement("i");
-mobileMenuBtnIcon.classList.add("fa-solid", "fa-bars");
-mobileMenuBtn.append(mobileMenuBtnIcon);
-
-mobileMenuBtn.addEventListener("click", (e) => {
-    mobileMenuContent.classList.toggle("active");
-    document.documentElement.classList.toggle("lock");
-    mobileMenuBtnIcon.classList.toggle("fa-bars");
-    mobileMenuBtnIcon.classList.toggle("fa-times");
-});
-mobileMenu.append(mobileMenuBtn);
-
 // Is auth page, set some styles
 if(isAuthPage) {
     document.getElementById('content').classList.add('auth-page');
 }
 
 if(!isAuthPage)
-{
+    {
+    // Mobile menu button for open/close
+    let mobileMenuBtn = document.createElement("button");
+    mobileMenuBtn.classList.add("mobile-menu-burger");
+
+    let mobileMenuBtnIcon = document.createElement("i");
+    mobileMenuBtnIcon.classList.add("fa-solid", "fa-bars");
+    mobileMenuBtn.append(mobileMenuBtnIcon);
+
+    mobileMenuBtn.addEventListener("click", (e) => {
+        mobileMenuContent.classList.toggle("active");
+        document.documentElement.classList.toggle("lock");
+        mobileMenuBtnIcon.classList.toggle("fa-bars");
+        mobileMenuBtnIcon.classList.toggle("fa-times");
+    });
+    mobileMenu.append(mobileMenuBtn);
+
     // Mobile menu content
     let mobileMenuContent = document.createElement("div");
     mobileMenuContent.classList.add("mobile-menu-content");
@@ -277,6 +293,9 @@ footer.innerHTML = `
             <ul>
                 <li>
                     <a href="https://www.vts.su.ac.rs/" target="_blank">Official website</a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/parlament_vts/" target="_blank">Instagram</a>
                 </li>
                 <li>
                     <a href="https://moodle2.vts.su.ac.rs/" target="_blank">Moodle</a>
