@@ -5,10 +5,10 @@ The **"Eref Redesign"** plugin is designed to create a modern look with addition
 The plugin supports site languages ​​such as Serbian (sr) and Hungarian (hu).
 
 * [Screenshots](#screenshots)
-* [Installation](#installation)
-    * [Google Chrome (Chromium, PC)](#google-chrome-chromium-desktop)
-    * [Firefox (Gecko, PC)](#firefox-gecko-desktop)
 * [Compatibility](#compatibility)
+* [Installation](#installation)
+* [PWA (Progressive web appliacation)](#pwa-progressive-web-appliacation)
+* [FAQ](#faq)
 
 ## Screenshots
 
@@ -21,14 +21,6 @@ The plugin supports site languages ​​such as Serbian (sr) and Hungarian (hu)
 | Mobile menu | Mobile login form |
 | :-: | :-: |
 | ![Mobile menu](/assets/readme/mobile-menu.png) | ![Mobile menu](/assets/readme/mobile-login.png)
-
-## Installation
-
-Instructions for each of the popular browsers are available at [github wiki](https://github.com/stepan323446/eref-redesign/wiki). The instructions also include mobile browsers that support extensions. A list of such browsers can be found in the [Compatibility](#compatibility) section
-
-Installing the plugin depends on what your browser is based on (Gecko or Chromium).
-
-To install the extension, go to the [Realeses](https://github.com/stepan323446/eref-redesign/releases) section and select the desired file (`.zip` for chromium, `.xpi` for gecko)
 
 ## Compatibility 
 
@@ -60,6 +52,64 @@ The following tables list the browsers that were tested.
 
 > [!NOTE]
 > The list of mobile browsers included those that support the installation of extensions
+
+## Installation
+
+A list of such browsers can be found in the [Compatibility](#compatibility) section. Installing the plugin depends on what your browser is based on (Gecko or Chromium).
+
+> [!IMPORTANT]
+> Not all mobile browsers support plugins. Also firefox does not support third party plugins
+
+To install the extension, go to the [Realeses](https://github.com/stepan323446/eref-redesign/releases) section and select the desired file (`.zip` for chromium, `.xpi` for gecko).
+
+### Desktop, chromium
+> Description based on Google Chrome
+
+1. Unpack the `.zip` archive and put the folder with the extension in a place that you will not move. The path to the folder will be linked.
+
+2. Open your **browser menu** (three dots icon at top right, `⋮`) and select **Extensions** -> **Manage Extensions**
+
+3. Turn on **Developer mode** (switch at the top right)
+
+4. Click on the "**Load unpacked**" button and select the path to the folder from the plugins (to the folder where `manifest.json` is located)
+
+5. Plugin is ready
+
+### Desktop, gecko
+
+> Description based on Floorp
+
+1. Download a file that has the extension `.xpi`
+
+2. Type `about:config` in the address bar. Then enter `xpinstall.signatures.required` in the config search and set the value to **false** (learn [more](https://support.mozilla.org/en-US/kb/add-on-signing-in-firefox)).
+
+3. Open your **browser menu** (three horizontal lines icon at top right, `≡`) and select **Add-ons and Themes**
+
+4. In the "**Extensions**" tab, click on the gear icon. Select the option "**Install Add-on from file**"
+
+5. Select plugin file (.xpi)
+
+6. After installation, click on the `...` for plugin and select **Manage**
+
+7. Go to the **Permissions** tab and check if "**Access your data for https://eref.vts.su.ac.rs**" is enabled
+
+8. Plugin is ready
+
+### Mobile, chromium
+
+> Description based on Kiwi browser
+
+1. Download the `.zip` archive. No need to unpack
+
+2. Open your **browser menu** (three dots icon at top right, `⋮`) and select **Extensions**
+
+3. Turn on **Developer mode** (switch at the top right)
+
+4. Select **+ (from .zip/.crx/.user.js)**
+
+5. Select plugin file (.zip)
+
+6. Plugin is ready
 
 ## PWA (Progressive web appliacation)
 
