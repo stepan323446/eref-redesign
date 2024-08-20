@@ -430,9 +430,12 @@ input[type="checkbox"]:not(:disabled) {
     cursor: pointer;
 }
 input[type="checkbox"]::before {
+    position: absolute;
     content: "";
-    width: 0.65em;
-    height: 0.65em;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
     box-shadow: inset 1em 1em var(--btn-primary-background);
@@ -447,7 +450,7 @@ input[type="checkbox"]:checked::before {
 input[type="checkbox"]:checked::after {
     position: absolute;
     content: "\f00c";
-    font-size: 8px;
+    font-size: 12px;
     font-family: var(--font-awesome);
     color: #fff;
     top: 50%;
@@ -1069,14 +1072,16 @@ ul.niceUL, ul.niceUL-wide {
         padding: 10px;
         border-radius: 10px;
     }
-    .mobile-menu-nav li.active a {
+    .mobile-menu-nav > li.active > a {
+        color: #fff;
         background: #101010;
+    }
+    .mobile-menu-li-children.active li.active a {
+        color: #fff;
+        text-decoration: underline;
     }
     .mobile-menu-nav li a {
         color: #cacaca;
-    }
-    .mobile-menu-nav li.active a {
-        color: #fff;
     }
     .mobile-menu-li-children {
         display: none !important;

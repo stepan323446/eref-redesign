@@ -21,35 +21,7 @@
         },
         {
             "matches": [ "https://eref.vts.su.ac.rs/*" ],
-            "js" : ["assets/js/eref-redesign.js"],
-            "run_at":"document_end"
-        },
-        {
-            "matches": [ "https://eref.vts.su.ac.rs/*/default/studentsdata/*" ],
-            "js" : ["assets/js/eref-profil.js"],
-            "run_at":"document_end"
-        },
-        {
-            "matches": [ "https://eref.vts.su.ac.rs/*/default/eboard/*" ],
-            "js" : ["assets/js/eref-etable.js"],
-            "run_at":"document_end"
-        },
-        {
-            "matches": [ "https://eref.vts.su.ac.rs/*/default/professors/*" ],
-            "js" : ["assets/js/eref-professor.js"],
-            "run_at":"document_end"
-        },
-        {
-            "matches": [ "https://eref.vts.su.ac.rs/*/default/subjects/*" ],
-            "js" : ["assets/js/eref-subjects.js"],
-            "run_at":"document_end"
-        },
-        {
-            "matches": [ 
-                "https://eref.vts.su.ac.rs/*/default/subjects/*", 
-                "https://eref.vts.su.ac.rs/*/default/literature/*" 
-            ],
-            "js" : ["assets/js/eref-legends.js"],
+            "js" : ["assets/js/eref-redesign-load.js"],
             "run_at":"document_end"
         }
     ],
@@ -60,6 +32,10 @@
         },
         {
             "resources": ["assets/webfonts/*"],
+            "matches": ["<all_urls>"]
+        },
+        {
+            "resources": ["assets/js/*.js"],
             "matches": ["<all_urls>"]
         }
     ],

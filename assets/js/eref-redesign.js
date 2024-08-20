@@ -1,31 +1,18 @@
-
-
-
-
-let pluginRootUrl = '';
-let browserType = '';
-if (typeof chrome !== 'undefined' && typeof browser === 'undefined') {
-    // Chrome
-    pluginRootUrl = chrome.runtime.getURL('');
-    browserType = 'chromium';
-} else if (typeof browser !== 'undefined') {
-    // Firefox
-    pluginRootUrl = browser.runtime.getURL('');
-    browserType = 'gecko';
-}
-const language = ((window.location.href + '/').includes('/sr/')) ? 'sr' : 'hu';
+const pluginRootUrl = document.getElementById('pluginRootUrlContainer').textContent;
+const url = window.location.href;
+const language = ((url + '/').includes('/hu/')) ? 'hu' : 'sr';
 
 let profileOriginal = document.querySelector("#header-top .nav-profile");
 const isAuthorized = (profileOriginal) ? true : false;
 const isAuthPage = (document.getElementById('login-wrap')) ? true : false;
 
-
+// Progressive web application
 const manifest = {
-    name: "Eref",
+    name: "VTS Eref",
     start_url: (language == 'sr') ? 'https://eref.vts.su.ac.rs/sr' : 'https://eref.vts.su.ac.rs/hu',
     display: "standalone",
     background_color: "#ffffff",
-    theme_color: "#000000",
+    theme_color: "#ffffff",
     icons: [
       {
         src: pluginRootUrl + "assets/images/favicon-app.png",
@@ -39,7 +26,6 @@ const manifestLink = document.createElement('link');
 manifestLink.rel = 'manifest';
 manifestLink.href = 'data:application/manifest+json,' + encodeURIComponent(JSON.stringify(manifest));
 
-// Append the manifest link to the head of the document
 document.head.appendChild(manifestLink);
 
 // Style refs for every browsers
@@ -359,3 +345,4 @@ footer.innerHTML = `
 
 document.body.append(footer);
 document.body.append(originalFooter);
+
