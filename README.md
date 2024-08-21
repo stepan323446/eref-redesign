@@ -7,9 +7,11 @@ The plugin supports site languages ​​such as Serbian (sr) and Hungarian (hu)
 * [Screenshots](#screenshots)
 * [Compatibility](#compatibility)
 * [Installation](#installation)
-    * [Desktop, chromium](#desktop-chromium)
-    * [Desktop, gecko](#desktop-gecko)
-    * [Mobile, chromium](#mobile-chromium)
+    * [From web store](#installation-from-web-store)
+    * [Manually installation](#manually-installation)
+        * [Desktop, chromium](#desktop-chromium)
+        * [Desktop, gecko](#desktop-gecko)
+        * [Mobile, chromium](#mobile-chromium)
 * [PWA (Progressive web appliacation)](#pwa-progressive-web-appliacation)
 * [FAQ](#faq)
 
@@ -39,7 +41,7 @@ The following tables list the browsers that were tested.
 | [Yandex browser](https://browser.yandex.com/) | Chromium | `24.6.1.852` | ✅ |
 | [Vivaldi](https://vivaldi.com/) | Chromium | `6.8.3381.53` | ✅ |
 | [Brave](https://brave.com/) | Chromium | `1.68.137` | ✅ |
-| [Firefox](https://www.mozilla.org/en-US/firefox/new/) | Gecko | `127.0` | ❌ |
+| [Firefox](https://www.mozilla.org/en-US/firefox/new/) | Gecko | `127.0` | ✅ |
 | [Firefox Developer](https://www.mozilla.org/en-US/firefox/developer/) | Gecko | `130.0b5` | ✅ |
 | [Nightly](https://www.mozilla.org/en-US/firefox/131.0a1/releasenotes/) | Gecko | `131.0a1` | ✅ |
 | [Floorp](https://floorp.app/) | Gecko | `11.16.0` | ✅ |
@@ -63,9 +65,21 @@ A list of such browsers can be found in the [Compatibility](#compatibility) sect
 > [!IMPORTANT]
 > Not all mobile browsers support plugins. Also firefox does not support third party plugins
 
+### Installation from web store
+
+You can install the extension in one of the web stores presented below:
+
+* [Chrome Web Store](https://chromewebstore.google.com/detail/eref-redesign/jdlighnhjgljciligfihoadhpmamdcmp) - Web Store of plugins and themes for Chromium-based browsers (Google Chrome, Microsoft Edge)
+* [Firefox Browser Addons](https://addons.mozilla.org/en-US/firefox/addon/eref-redesign/) - Web Store of plugins and themes for Gecko-based browsers (Firefox, Floorp)
+
+> [!NOTE]
+> The plugin has been moderated by Chrome Web Store and Firefox Browser Addons
+
+### Manually installation
+
 To install the extension, go to the [Realeses](https://github.com/stepan323446/eref-redesign/releases) section and select the desired file (`.zip` for chromium, `.xpi` for gecko).
 
-### Desktop, chromium
+#### Desktop, chromium
 > Description based on Google Chrome
 
 1. Unpack the `.zip` archive and put the folder with the extension in a place that you will not move. The path to the folder will be linked.
@@ -78,7 +92,7 @@ To install the extension, go to the [Realeses](https://github.com/stepan323446/e
 
 5. Plugin is ready
 
-### Desktop, gecko
+#### Desktop, gecko
 
 > Description based on Floorp
 
@@ -98,7 +112,7 @@ To install the extension, go to the [Realeses](https://github.com/stepan323446/e
 
 8. Plugin is ready
 
-### Mobile, chromium
+#### Mobile, chromium
 
 > Description based on Kiwi browser
 

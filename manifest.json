@@ -43,7 +43,7 @@
     "browser_specific_settings": {
         "gecko": {
             "id": "eref-update-design@vts.su.ac.rs",
-            "strict_min_version": "57.0"
+            "strict_min_version": "58.0"
         }
     }
 }
