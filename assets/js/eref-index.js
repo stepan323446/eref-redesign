@@ -94,7 +94,6 @@ class TimetableSubject {
     __startCountdown() {
         const interval = setInterval(() => {
             const now = new Date(); 
-            now.setHours(12, 20);
             const difference = this.startTime - now;
     
             if (difference <= 0) {
@@ -263,8 +262,6 @@ addSection(
             tempDiv.innerHTML = html;
             const rows = tempDiv.querySelectorAll('.schedule tr');
             const now = new Date();
-            // test
-            now.setHours(12, 20);
 
             let times = [ ];
             let nextSubject = null;
