@@ -31,6 +31,11 @@ document.head.appendChild(manifestLink);
 // Style refs for every browsers
 let style = document.createElement('style');
 
+// Get language function
+function getLangText(sr, hu) {
+    return (language == 'sr') ? sr : hu;
+}
+
 // Add your CSS rules as text and font family
 style.innerHTML = `
 :root {

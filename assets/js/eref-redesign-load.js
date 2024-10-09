@@ -33,6 +33,11 @@ function initScript() {
     
 
     loadScript('eref-redesign.js', function () {
+        const index_regex = /^https:\/\/eref\.vts\.su\.ac\.rs(\/(sr|hu)\/?)?\/?$/;
+
+        if (index_regex.test(url) || url == "https://eref.vts.su.ac.rs/sr/default" || url == "https://eref.vts.su.ac.rs/hu/default")
+            loadScript('eref-index.js');
+
         if (url.includes('default/studentsdata'))
             loadScript('eref-profil.js');
 

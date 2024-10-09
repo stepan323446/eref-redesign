@@ -346,6 +346,18 @@ input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hove
     background: var(--btn-primary-background-hover) !important;
     color: var(--btn-primary-color-hover) !important;
 }
+.eref-redesign__links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+.eref-redesign__links .btn {
+    display: block;
+    background: #fff !important;
+    color: #000 !important;
+    padding: 10px !important;
+    border: 1px solid #adadad !important;
+}
 #loginform p {
     margin-bottom: 5px !important;
 }
@@ -552,6 +564,7 @@ ul.error, ul.errors, ul.warning, ul.success, ul.notice {
     position: relative;
     padding: 10px 10px 10px 60px !important;
     min-height: auto !important;
+    margin-bottom: 15px;
 }
 .noticeDiv, .errorDiv, .warningDiv, .successDiv {
     font-size: 14px;
