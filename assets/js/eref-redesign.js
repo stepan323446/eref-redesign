@@ -352,4 +352,3 @@ footer.innerHTML = `
 
 document.body.append(footer);
 document.body.append(originalFooter);
-

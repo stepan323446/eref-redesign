@@ -38,6 +38,9 @@ function initScript() {
         if (index_regex.test(url) || url == "https://eref.vts.su.ac.rs/sr/default" || url == "https://eref.vts.su.ac.rs/hu/default")
             loadScript('eref-index.js');
 
+        if (url.includes('schedule/groupschedule/id/'))
+            loadScript('eref-timetable.js')
+
         if (url.includes('default/studentsdata'))
             loadScript('eref-profil.js');
 
