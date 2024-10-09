@@ -906,6 +906,9 @@ ul.niceUL, ul.niceUL-wide {
     border: 1px solid rgb(173, 173, 173);
     padding: 0 5px 0 5px;
 }
+.eref-index__widget p {
+    margin: 10px 0;
+}
 .eref-widget__header {
     display: flex;
     justify-content: space-between;

@@ -342,11 +342,12 @@ addSection(
 
             widgetContent.innerHTML += `<p class="eref-widget__note">If the schedule does not match yours, go to the subjects and set your own again</p>`
 
+            console.log(nextSubject)
             // Next subject
             if(nextSubject)
                 widgetContent.prepend(nextSubject.createElement());
             else
-                widgetContent.innerHTML += `<p>${getLangText('Sada nemate ništa', 'Most nincs semmi')}</p>`;
+                widgetContent.innerHTML = `<p>${getLangText('Sada nemate ništa', 'Most nincs semmi')}</p>` + widgetContent.innerHTML;
 
 
         })
