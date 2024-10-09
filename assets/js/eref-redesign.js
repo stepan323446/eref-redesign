@@ -1,3 +1,5 @@
+const pluginVersion = "1.2.0"
+
 const pluginRootUrl = document.getElementById('pluginRootUrlContainer').textContent;
 const url = window.location.href;
 const language = ((url + '/').includes('/hu/')) ? 'hu' : 'sr';
@@ -296,7 +298,7 @@ footer.innerHTML = `
 
             <p>The "Eref Redesign" plugin is designed to create a modern look with additional functionality and adaptability of the site eref.vts.su.ac.rs.</p>
 
-            <p>Version: 1.0.0</p>
+            <p>Version: ${pluginVersion}</p>
         </div>
     </div>
     <div class="footer-right">
