@@ -899,6 +899,8 @@ ul.niceUL, ul.niceUL-wide {
 .eref-index__widgets {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
 }
 .eref-index__widget {
     background: #fff;
@@ -906,6 +908,7 @@ ul.niceUL, ul.niceUL-wide {
     border: 1px solid rgb(173, 173, 173);
     padding: 0 5px 0 5px;
     overflow: hidden;
+    height: fit-content;
 }
 .eref-index__widget p {
     margin: 10px 0;
@@ -931,6 +934,9 @@ ul.niceUL, ul.niceUL-wide {
     font-size: 10px;
 }
 
+.eref-subjects.eref-content {
+    text-align: center;
+}
 .eref-subject {
     background: #c2e1f9;
     border-radius: 5px;
@@ -1001,6 +1007,7 @@ ul.niceUL, ul.niceUL-wide {
 .eref-content {
     padding: 5px;
     font-family: var(--default-font);
+    text-align: left;
 }
 
 
@@ -1060,6 +1067,38 @@ ul.niceUL, ul.niceUL-wide {
     margin-bottom: 20px;
 }
 
+.update-widget {
+    display: none;
+    font-size: 14px;
+    background: #e3e3e3;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.update-widget:nth-child(1),
+.update-widget:nth-child(2) {
+    display: block;
+}
+.eref-update-logs.active .update-widget {
+    display: block;    
+}
+
+.update-item__header {
+    font-weight: 600;
+}
+.update-item__content.content {
+    font-size: 12px;
+}
+.update-item__content ul {
+    padding-left: 20px;
+}
+.eref-redesign__hint {
+    position: absolute;
+    padding: 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    background: #fff;
+}
 @media only screen and (max-width: 1300px) {
     .profile-image {
         width: 145px;

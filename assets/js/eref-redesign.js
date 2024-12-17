@@ -1,4 +1,4 @@
-const pluginVersion = "1.2.0"
+const pluginVersion = "1.3.0"
 
 const pluginRootUrl = document.getElementById('pluginRootUrlContainer').textContent;
 const url = window.location.href;

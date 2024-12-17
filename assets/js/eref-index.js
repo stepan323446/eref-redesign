@@ -17,6 +17,16 @@ function getLinkByLang(link) {
     else
         return "/hu" + link
 }
+const text = getLangText("Raspored", "Órarend");
+const urlSchedule = document.evaluate(
+    `//*[text()='${text}']`, 
+    document, 
+    null, 
+    XPathResult.FIRST_ORDERED_NODE_TYPE, 
+    null
+).singleNodeValue?.getAttribute("href");
+
+
 createNewLink(
     getLangText('E-tabla', 'E-tábla'), getLinkByLang('/default/eboard/index')
 );
@@ -27,7 +37,7 @@ createNewLink(
     getLangText('Nastavnici', 'Tanárok'), getLinkByLang('/default/professors/index')
 );
 createNewLink(
-    getLangText('Raspored', 'Órarend'), getLinkByLang('/default/schedule/groups/id/20')
+    getLangText('Raspored', 'Órarend'), urlSchedule
 );
 
 let widgets = document.createElement('div');
@@ -226,7 +236,7 @@ function addSection(title, link, getElement) {
     widget.innerHTML += `
     <div class="eref-widget__header">
         <h2>${title}</h2>
-        <a href="${getLinkByLang('/default/subjects/index')}" class="eref-widget__ref">
+        <a href="${link}" class="eref-widget__ref">
             <i class="fas fa-share-square"></i>
         </a>
     </div>
@@ -234,14 +244,16 @@ function addSection(title, link, getElement) {
     widget.append(getElement());
     widgets.append(widget);
 }
+let timetable_url = localStorage.getItem('eref-redesign-timetable');
+
 addSection(
-    getLangText('Predmeti', 'Tantárgyak'), 
-    getLinkByLang('/default/subjects/index'), 
+    getLangText('Raspored', 'Órarend'), 
+    urlSchedule, 
     () => {
         let widgetContent = document.createElement('div');
         widgetContent.classList.add('eref-subjects', 'eref-content')
 
-        let timetable_url = localStorage.getItem('eref-redesign-timetable');
+        
         widgetContent.classList.add('none');
         if(!timetable_url) {
             widgetContent.innerHTML = `<p>You can add your timetable from "${getLangText('Raspored', 'Órarend')}"</p>`;
@@ -354,10 +366,73 @@ addSection(
         .catch(error => {
             widgetContent.innerHTML = `<p>Unexcepted Error</p>`;
             console.error(error);
-            return widgetContent;
         });
         
 
         return widgetContent;
     }
 );
+
+// Update log
+function getUpdateElem(version, content, changes) {
+    let elem = document.createElement("div");
+    elem.classList.add("update-widget");
+    let list = "";
+    for(let change of changes)
+        list += `<li>${change}</li>`;
+
+    elem.innerHTML = `
+        <div class="update-item__header">
+            ${version}
+        </div>
+        <div class="update-item__content content">
+            <p>${content}</p>
+            <ul>
+                ${list}
+            </li>
+        </div>
+    `;
+    return elem;
+}
+addSection(
+    "Update log",
+    "https://github.com/stepan323446/eref-redesign/releases/",
+    () => {
+        let content = document.createElement("div");
+        content.classList.add("eref-content", "eref-update-logs");
+        content.append(
+            getUpdateElem("1.3.0", "", [
+                "Fixed link to your timetable for timetable widget",
+                "The static link to the schedule has been removed. Now, the link adjusts to the schedule for each year.",
+                "Added widget 'Update logs'",
+                "Custom hint for grades on page 'subjects'"
+            ]),
+            getUpdateElem("1.2.0", "", [
+                "Added widgets and links for index page",
+                "Added widget 'timetable'"
+            ]),
+            getUpdateElem("1.1.0", "", [
+                "Fixed a bug where scripts for individual pages were loaded before the main script",
+                "Fixed black icon for PWA",
+                "Fixed a bug in the mobile menu when active sub-items were highlighted as main ones",
+                "Changed the appearance for checkboxes"
+            ]),
+            getUpdateElem("1.0.0", "", [
+                "Release of a new extension for eref.vts.su.ac.rs as a redesign of the old interface"
+            ]),
+        );
+
+        let btnToMaximaze = document.createElement("button");
+        btnToMaximaze.type = "button";
+        btnToMaximaze.classList.add("btn");
+        btnToMaximaze.addEventListener("click", (e) => {
+            content.classList.add("active");
+            btnToMaximaze.hidden = true;
+        });
+
+        btnToMaximaze.textContent = getLangText("Pokaži sve", "Összes megjelenítése");
+
+        content.append(btnToMaximaze);
+        return content;
+    }
+)
